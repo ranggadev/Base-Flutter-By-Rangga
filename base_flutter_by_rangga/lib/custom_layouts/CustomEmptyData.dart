@@ -2,13 +2,13 @@ import 'package:base_flutter_by_rangga/common/MyFontSize.dart';
 import 'package:base_flutter_by_rangga/common/MyString.dart';
 import 'package:flutter/material.dart';
 
-class MyEmptyData extends StatelessWidget {
+class CustomEmptyData extends StatelessWidget {
 
   final double height, width;
   final String buttomTitle;
   final VoidCallback buttomAction;
 
-  const MyEmptyData({Key key, this.height = double.infinity, this.width = double.infinity, this.buttomTitle = "Refresh", this.buttomAction}) : super(key: key);
+  const CustomEmptyData({Key key, this.height = double.infinity, this.width = double.infinity, this.buttomTitle = "Refresh", this.buttomAction}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

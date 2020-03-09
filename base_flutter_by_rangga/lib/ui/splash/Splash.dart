@@ -2,8 +2,9 @@ import 'dart:async';
 import 'package:base_flutter_by_rangga/common/MyColor.dart';
 import 'package:base_flutter_by_rangga/common/MyConstanta.dart';
 import 'package:base_flutter_by_rangga/common/MyHelper.dart';
-import 'package:base_flutter_by_rangga/uis/auth/UserLogin.dart';
+import 'package:base_flutter_by_rangga/custom_layouts/CustomUnderConstruction.dart';
 import 'package:flutter/material.dart';
+
 import '../MainMenu.dart';
 
 class Splash extends StatefulWidget {
@@ -25,7 +26,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
         ));
       } else {
         Navigator.pushReplacement(context, MaterialPageRoute(
-          builder: (context) => UserLogin(),
+          builder: (context) => CustomUnderConstruction(),
         ));
       }
     });
@@ -44,7 +45,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
       backgroundColor: MyHelper.hexToColor(MyColor.primary),
       body: Center(
         child: Image.asset(
-          "assets/image/toska_maskot.png",
+          "assets/images/logo.png",
           fit: BoxFit.fitWidth,
           width: 320.0,
         ),

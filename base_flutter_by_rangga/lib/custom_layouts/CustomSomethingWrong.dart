@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class MySomethingWrong extends StatelessWidget {
+class CustomSomethingWrong extends StatelessWidget {
 
   final double height, width;
   final String buttomTitle;
   final VoidCallback buttomAction;
 
-  const MySomethingWrong({Key key, this.height = double.infinity, this.width = double.infinity, this.buttomTitle = "Refresh", this.buttomAction}) : super(key: key);
+  const CustomSomethingWrong({Key key, this.height = double.infinity, this.width = double.infinity, this.buttomTitle = "Refresh", this.buttomAction}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

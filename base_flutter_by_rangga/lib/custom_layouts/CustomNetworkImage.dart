@@ -1,14 +1,16 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'MyShimmer.dart';
 
-class MyNetworkImage extends StatelessWidget {
+import 'CustomShimmer.dart';
+
+class CustomNetworkImage extends StatelessWidget {
   final String imageUrl;
   final double height, width, borderRadius;
   final BoxFit fit;
   final bool shimmerActive;
+  final String imgPlaceholderAsset;
 
-  const MyNetworkImage(
+  const CustomNetworkImage(
       {Key key,
       this.imageUrl,
       this.height,
@@ -16,6 +18,7 @@ class MyNetworkImage extends StatelessWidget {
       this.borderRadius = 0.0,
       this.fit = BoxFit.cover,
       this.shimmerActive = true,
+      this.imgPlaceholderAsset = "assets/images/common_placeholder.png",
       })
       : super(key: key);
 
@@ -24,14 +27,14 @@ class MyNetworkImage extends StatelessWidget {
     final widgetWithoutZoom = ClipRRect(
       borderRadius: BorderRadius.circular(borderRadius),
       child: shimmerActive
-          ? MyShimmer(
+          ? CustomShimmer(
               height: height,
               width: width,
             )
           : CachedNetworkImage(
               imageUrl: imageUrl.toString(),
               placeholder: (context, url) {
-                return MyShimmer(
+                return CustomShimmer(
                   height: height,
                   width: width,
                 );
@@ -41,7 +44,7 @@ class MyNetworkImage extends StatelessWidget {
                   height: height,
                   width: width,
                   child: Image.asset(
-                    "assets/image_common/placeholder.jpg",
+                    this.imgPlaceholderAsset,
                     height: height,
                     width: width,
                     fit: BoxFit.cover,

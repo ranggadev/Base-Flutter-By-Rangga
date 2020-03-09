@@ -2,7 +2,7 @@ import 'package:base_flutter_by_rangga/common/MyHelper.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
-class MyShimmer extends StatelessWidget {
+class CustomShimmer extends StatelessWidget {
   final double height,
       width,
       borderRadius,
@@ -11,7 +11,7 @@ class MyShimmer extends StatelessWidget {
       marginRight,
       marginBottom;
 
-  const MyShimmer(
+  const CustomShimmer(
       {Key key,
       this.height = 16.0,
       this.width = 96.0,

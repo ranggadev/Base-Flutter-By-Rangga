@@ -1,7 +1,6 @@
-import 'package:base_flutter_by_rangga/uis/splash/Splash.dart';
+import 'package:base_flutter_by_rangga/ui/splash/Splash.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
-
 import 'common/MyColor.dart';
 import 'common/MyHelper.dart';
 

@@ -1,17 +1,18 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
-import 'MyShimmer.dart';
+import 'CustomShimmer.dart';
 
-class MyNetworkImageZoom extends StatelessWidget {
+class CustomNetworkImageZoom extends StatelessWidget {
   final String imageUrl;
   final double height, width, borderRadius;
   final BoxFit fit;
   final bool shimmerActive;
   final String heroTag;
   final int heroTagIndex;
+  final String imgPlaceholderAsset;
 
-  const MyNetworkImageZoom(
+  const CustomNetworkImageZoom(
       {Key key,
       this.imageUrl,
       this.height,
@@ -20,8 +21,9 @@ class MyNetworkImageZoom extends StatelessWidget {
       this.fit = BoxFit.cover,
       this.shimmerActive = true,
       this.heroTag = "a",
-      this.heroTagIndex = 0})
-      : super(key: key);
+      this.heroTagIndex = 0,
+      this.imgPlaceholderAsset = "assets/images/common_placeholder.png",
+    }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -45,14 +47,14 @@ class MyNetworkImageZoom extends StatelessWidget {
         child: Hero(
           tag: "$heroTag-$heroTagIndex",
           child: shimmerActive
-              ? MyShimmer(
+              ? CustomShimmer(
                   height: height,
                   width: width,
                 )
               : CachedNetworkImage(
                   imageUrl: imageUrl,
                   placeholder: (context, url) {
-                    return MyShimmer(
+                    return CustomShimmer(
                       height: height,
                       width: width,
                     );
@@ -62,7 +64,7 @@ class MyNetworkImageZoom extends StatelessWidget {
                       height: height,
                       width: width,
                       child: Image.asset(
-                        "assets/image_common/placeholder.jpg",
+                        this.imgPlaceholderAsset,
                         height: height,
                         width: width,
                         fit: BoxFit.cover,
@@ -90,18 +92,18 @@ class _MyZoomableImg extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-      ),
-      body: Hero(
-        tag: "$heroTag-$heroTagIndex",
-        child: Container(
+    return Hero(
+      tag: "$heroTag-$heroTagIndex",
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+        ),
+        body: Container(
           color: Colors.black,
           child: PhotoView(
             imageProvider: NetworkImage(imgUrl)
           ),
-        )
+        ),
       ),
     );
   }

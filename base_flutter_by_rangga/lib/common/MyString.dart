@@ -17,6 +17,7 @@ class MyString {
   static String loginSuccess = "Berhasil Login";
   static String ok = "OK";
   static String exit = "Keluar";
+  static String underConstruction = "Sedang Dikerjakan";
 
   //-- others string --
   static String lorem1 = "Lorem ipsum";
