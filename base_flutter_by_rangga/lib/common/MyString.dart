@@ -1,6 +1,8 @@
 class MyString {
   //-- common string --
   static String appName = "Bunganakita";
+  static String lorem1 = "Lorem ipsum";
+  static String lorem2 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In congue eros pellentesque dui facilisis tempus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi tincidunt congue dapibus. ";
   static String noData = "Tidak ada data";
   static String dataCouldNotBeEmpty = "Data tidak boleh kosong";
   static String somethingWrong = "Terjadi Kesalahan";
@@ -18,9 +20,8 @@ class MyString {
   static String ok = "OK";
   static String exit = "Keluar";
   static String underConstruction = "Sedang Dikerjakan";
+  static String refresh = "Refresh";
 
   //-- others string --
-  static String lorem1 = "Lorem ipsum";
-  static String lorem2 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In congue eros pellentesque dui facilisis tempus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi tincidunt congue dapibus. ";
   static String x = "x";
 }

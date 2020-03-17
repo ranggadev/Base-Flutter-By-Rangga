@@ -5,10 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 import 'package:intl/intl.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'MyColor.dart';
 import 'MyConstanta.dart';
+import 'MyString.dart';
 
 
 const _kSmilies = {':)': '🙂'};
@@ -181,8 +183,26 @@ class MyHelper {
     );
   }
 
-  static String slugWeb(String text) {
+  static alert(BuildContext context, AlertType alertType, String title, String description, void action()) {
+    Alert(
+      context: context,
+      type: alertType,
+      title: MyHelper.returnToString(title),
+      desc: MyHelper.returnToString(description),
+      buttons: [
+        DialogButton(
+          child: Text(
+            MyString.ok,
+            style: TextStyle(color: Colors.white, fontSize: 20),
+          ),
+          onPressed: () => action(),
+          width: 120,
+        )
+      ],
+    ).show();
+  }
 
+  static String slugWeb(String text) {
     String slug = "";
 
     slug = text.replaceAll("/", "*");
