@@ -20,7 +20,7 @@ class CustomEmptyData extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            (this.showImgAssets == null || true) ? Image.asset(
+            (this.showImgAssets == null) ? Container() : (this.showImgAssets) ? Image.asset(
               this.imgAssets == null ? "assets/gif/gif_empty.gif" : this.imgAssets,
               width: 160.0,
               height: 80.0,
@@ -31,7 +31,7 @@ class CustomEmptyData extends StatelessWidget {
               style: TextStyle(fontSize: MyFontSize.small1, color: Colors.grey),
             ),
             SizedBox(height: 8.0,),
-            (this.showButton == null || true) ? FlatButton(
+            (this.showButton == null) ? Container() : (this.showButton) ? FlatButton(
               onPressed: () {
                 buttonAction();
               },
