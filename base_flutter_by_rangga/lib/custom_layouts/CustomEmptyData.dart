@@ -9,7 +9,7 @@ class CustomEmptyData extends StatelessWidget {
   final String imgAssets, caption, buttonCaption;
   final VoidCallback buttonAction;
 
-  const CustomEmptyData({Key key, this.showImgAssets, this.showButton, this.height, this.width, this.imgAssets, this.caption, this.buttonCaption, this.buttonAction}) : super(key: key);
+  const CustomEmptyData({Key key, this.showImgAssets = true, this.showButton = true, this.height, this.width, this.imgAssets, this.caption, this.buttonCaption, this.buttonAction}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class CustomEmptyData extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            (this.showImgAssets == null) ? Container() : (this.showImgAssets) ? Image.asset(
+            (this.showImgAssets) ? Image.asset(
               this.imgAssets == null ? "assets/gif/gif_empty.gif" : this.imgAssets,
               width: 160.0,
               height: 80.0,
@@ -31,12 +31,12 @@ class CustomEmptyData extends StatelessWidget {
               style: TextStyle(fontSize: MyFontSize.small1, color: Colors.grey),
             ),
             SizedBox(height: 8.0,),
-            (this.showButton == null) ? Container() : (this.showButton) ? FlatButton(
-              onPressed: () {
-                buttonAction();
-              },
-              color: Colors.grey.withOpacity(.2),
-              child: Text(this.buttonCaption == null ? MyString.refresh : this.buttonCaption)
+            (this.showButton) ? FlatButton(
+                onPressed: () {
+                  buttonAction();
+                },
+                color: Colors.grey.withOpacity(.2),
+                child: Text(this.buttonCaption == null ? MyString.refresh : this.buttonCaption)
             ) : Container(),
           ],
         ),
